@@ -1,0 +1,561 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<style>
+
+    /* Hero Section */
+
+    .hero {
+        background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+        color: #ffffff;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* subtle overlay for contrast */
+        z-index: 1;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+        .hero h1 span {
+            color: #ffd700; /* gold accent */
+        }
+
+    .hero h5 {
+        font-size: 1.25rem;
+        letter-spacing: 0.3px;
+        color: #f0f0f0;
+    }
+
+    .hero p {
+        max-width: 600px;
+        color: #e0e0e0;
+        font-size: 1.1rem;
+    }
+
+    /* Image Styling */
+    .hero-img {
+        width: 380px; /* expand width */
+        max-width: 100%; /* ensures responsiveness */
+        height: auto; /* keeps aspect ratio */
+        object-fit: contain; /* ensures whole image is visible */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-radius: 10px; /* optional: rounded corners instead of circle */
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+        .hero-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+
+
+    /* Particle Styles */
+    .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        animation: float 15s linear infinite;
+    }
+
+    @@keyframes float {
+        0%
+
+    {
+        transform: translateY(0) translateX(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-50vh) translateX(20px);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(-20px);
+        opacity: 0;
+    }
+
+    }
+
+    /* Responsive Adjustments */
+    @@media (max-width: 768px) {
+        .hero
+
+    {
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .hero-img {
+        margin: 20px auto 0 auto;
+    }
+
+
+    }
+
+    /* Buttons */
+    .hero .btn {
+        background: #ffd700;
+        color: #004aad;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+        .hero .btn:hover {
+            background: #ffc107;
+            color: #002366;
+            transform: translateY(-3px);
+        }
+
+    /* Social Icons */
+    .social-icons a {
+        color: #ffffff;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+        .social-icons a:hover {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+
+    .platform-logo {
+        height: 40px; /* increase or decrease size */
+        width: auto; /* keeps correct aspect ratio */
+        object-fit: contain;
+        margin-right: 6px; /* small spacing before the slash */
+        vertical-align: middle;
+    }
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<section class="hero d-flex align-items-center min-vh-100">
+    <!-- Particle Container -->
+    <div class="particles"></div>
+
+    <div id="home" class="container">
+        <div class="row align-items-center">
+            <!-- Left Content -->
+            <div class="col-lg-7 col-md-12 text-start">
+                <h1 class="fw-bold display-4 mb-2">Hi, I'm <span>Asenathi Yawa</span></h1>
+
+                <h5 class="fw-semibold mb-3">
+                    Software Developer
+                </h5>
+
+                <p class="lead mb-4">
+                    Cyber Security & Software Development Student | Software Development Graduate<br />
+                    Passionate About Information Technology & Life-long Learning.
+                </p>
+
+                <!-- Button to open CV Modal -->
+                <a href="#" class="btn btn-lg px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#cvModal">
+                    <i class="bi bi-envelope-fill me-2"></i>View My Curriculum Vitae
+                </a>
+                <!-- Social Icons -->
+                <div class="social-icons mt-4">
+                    <a href="https://www.facebook.com/asenathi.yawa.2025" class="me-3 fs-4"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/27657016578" target="_blank" class="me-3 fs-4"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://github.com/dashboard" class="me-3 fs-4"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/asenathi-yawa-181382293" class="fs-4"><i class="bi bi-linkedin"></i></a>
+                    <a href="mailto:yawaasenathi2003@gmail.com" class="me-3 fs-4"> <i class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-lg-5 col-md-12 text-center mt-5 mt-lg-0">
+                <img src="~/images/graduate.jpg" alt="Profile Photo" class="hero-img" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CERTIFICATES SECTION WITH MODALS -->
+<section id="certificates" class="py-5" style="background:#f8f9fa;">
+    <div id="projects" class="container">
+        <h2 class="text-center fw-bold mb-4" style="color:#004aad;">Certificates</h2>
+        <p class="text-center mb-5 text-muted">
+            A collection of certifications I've earned throughout my learning journey.
+        </p>
+
+        <div class="row g-4">
+            <!-- Certificate 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Diploma In Information Technology Certificate</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+                        </p>
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal1">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Cisco Networking Academy Certificate</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+                        </p>
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal2">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Student Merit Award(2023)</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal3">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Student Merit Award(2024)</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal4">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Cyber Awareness Programme Certificate</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal5">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
+                        <h5 class="fw-semibold">Ikamva resident award</h5>
+                        <p class="text-muted">
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
+
+                        </p>
+
+                        <!-- VIEW BUTTON -->
+                        <button class="btn btn-primary btn-sm px-3 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certModal6">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Certificate Modal 1 -->
+<div class="modal fade" id="certModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/asenhathiYawaCertificate.pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+
+<!-- Certificate Modal 2 -->
+<div class="modal fade" id="certModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/asenathiyawa-cyber security --certificate (1).pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Certificate Modal 3 -->
+<div class="modal fade" id="certModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/student merit award_2023.pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Certificate Modal 4 -->
+<div class="modal fade" id="certModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/student merit award_2024.pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Certificate Modal 5 -->
+<div class="modal fade" id="certModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/cybersecurity_awareness_certificate.pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="certModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <iframe src="/certificates/asenathirezaward.pdf"
+                    style="width:100%; height:80vh; border:0; border-radius:12px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="mt-5">
+    <h2 class="text-center fw-bold mb-4" style="color:#004aad;">Skills</h2>
+    <p class="text-center mb-5 text-muted">
+        A collection of skills I've acquired throughout my learning journey.
+    </p>
+
+    <div class="row g-3 justify-content-center">
+
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="bi bi-shield-lock-fill fs-2" style="color:#0072ff;"></i>
+                <p class="mt-2 fw-semibold">Cyber Security</p>
+            </div>
+        </div>
+
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="bi bi-code-slash fs-2" style="color:#0072ff;"></i>
+                <p class="mt-2 fw-semibold">Web Development</p>
+            </div>
+        </div>
+
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-csharp-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <p class="mt-2 fw-semibold">C#</p>
+            </div>
+        </div>
+
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-javascript-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+
+                <p class="mt-2 fw-semibold">Java Script</p>
+            </div>
+        </div>
+
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <p class="mt-2 fw-semibold">Entity Framework</p>
+            </div>
+        </div>
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <p class="mt-2 fw-semibold">MVC</p>
+            </div>
+        </div>
+        <!-- Skill Item -->
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <p class="mt-2 fw-semibold">Dapper</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0072ff" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 18c2-6 6-10 10-10s8 4 10 10" />
+                    <path d="M7 14c2-2 3-3 5-3s3 1 5 3" />
+                    <circle cx="12" cy="19" r="1.2" fill="#0072ff" />
+                </svg>
+                <p class="mt-2 fw-semibold">MySQL</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="#e34c26">
+                    <path d="M3 3l1.8 16.2L12 21l7.2-1.8L21 3H3zm14.3 4.6l-.2 2.3-.1.8H8.2l.3 3h7.4l-.1.7-.5 4.1L12 19l-3.3-.9-.2-2.5h2.1l.1 1.3 1.3.3 1.3-.3.2-2H6.9l-.5-5.4-.1-1.4h11z" />
+                </svg>
+                <p class="mt-2 fw-semibold">HTML</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="#1572b6">
+                    <path d="M3 3l1.8 16.2L12 21l7.2-1.8L21 3H3zm14.5 4.6l-.2 2.1H8.1l.2 1.9h8l-.5 4.4L12 19l-3.8-1 .3-2.1h2
+                     l-.1 1.1 1.6.4 1.6-.4.2-2.2H6.8L6 7.6h11.5z" />
+                </svg>
+                <p class="mt-2 fw-semibold">CSS</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CV Modal -->
+<div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cvModalLabel">My Curriculum Vitae</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe src="/certificates/asenathiyawacv.pdf" width="100%" height="600px" style="border:none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Me Section -->
+<section class="py-5">
+    <div id="about" class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-center fw-bold mb-4" style="color:#004aad;">About Me</h2>
+                <p class="lead">
+                    I'm a passionate software developer with experience in C#, MVC, Entity Framework, Dapper, SQL Server, and JavaScript. I enjoy building efficient and scalable applications, solving problems creatively, and continuously learning new technologies.
+                </p>
+                <p>
+                    When I’m not coding, I love exploring new tools and frameworks, contributing to open-source projects, and staying up-to-date with the latest trends in software development.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showCV() {
+        document.getElementById('cvContainer').style.display = 'block';
+    }
+</script>
